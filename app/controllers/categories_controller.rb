@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  
   def index
     @categories = Category.all
   end
@@ -14,6 +15,11 @@ class CategoriesController < ApplicationController
   def create
     category = Category.create(category_params)
     redirect_to category_path(category)
+    # if @category.save
+    # redirect_to category_path(category)
+    # else
+    #   render :new
+    # end
   end
 
   def edit
